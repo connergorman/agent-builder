@@ -1,3 +1,3 @@
 steps:
   - command: echo "I am agent $BUILDKITE_AGENT_NAME"
-  - command: docker run -d -t --name ${BUILDKITE_PIPELINE_SLUG}-agent -e  BUILDKITE_AGENT_DISCONNECT_AFTER_JOB=true -e  BUILDKITE_AGENT_NAME=${QUEUE_NAME}-agent -e  BUILDKITE_AGENT_TAGS="queue=${QUEUE_NAME}-agent"  buildkite/agent:3 start --token $BK_TOKEN
+  - command: docker run -d -t --name ${QUEUE_NAME}-agent -e  BUILDKITE_AGENT_DISCONNECT_AFTER_JOB=true -e  BUILDKITE_AGENT_NAME=${QUEUE_NAME}-agent -e  BUILDKITE_AGENT_TAGS="queue=${QUEUE_NAME}-agent"  buildkite/agent:3 start --token $BK_TOKEN
