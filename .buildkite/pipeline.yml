@@ -1,2 +1,2 @@
 steps:
-  - command: docker run -d -t --name buildkite-agent buildkite/agent:3 start --token "<your-agent-token>"
+  - command: docker run -d -t --name "$BUILDKITE_PIPELINE_NAME"-agent -e  BUILDKITE_AGENT_DISCONNECT_AFTER_JOB=true buildkite/agent:3 start --token $BK_TOKEN
